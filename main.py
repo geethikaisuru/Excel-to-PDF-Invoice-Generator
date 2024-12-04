@@ -13,6 +13,10 @@ for filepath in filepaths:
     pdf.set_font("Times", size=17, style="B")
 
     # get the invoice number from the file name
-    invoice_number = (Path(filepath).stem).split("-")[0]
+    invoice_number, date = (Path(filepath).stem).split("-")
     pdf.cell(200, 10, txt=f"Invoice Nu: {invoice_number}", ln=True, align="L")
+
+    pdf.set_font("Times", size=1
+    )
+    pdf.cell(200, 10, txt=f"Date: {date}", ln=True, align="L")
     pdf.output(f"Invoices\{invoice_number}.pdf")
