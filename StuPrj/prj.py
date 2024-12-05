@@ -20,6 +20,5 @@ for filepath in filepaths:
 
         # read the txt files and get the data inside it
         pdf.set_font("Times", size=11)
-        pdf.add_dynamic_multicell(data, 200)
-        #pdf.multi_cell(200, 40, txt=f"Data: {data}", align="L")
+        pdf.multi_cell(0, 8, txt=f"Data: {data}", align="L")
         pdf.output(f"prj\output\{file_name}.pdf")
